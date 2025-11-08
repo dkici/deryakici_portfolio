@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Science – Derya Kici</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header .banner {
+      background-image: url('customLogo.gif');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background-color: white;
+    }
+    nav ul li a {
+      display: block;
+      padding: 1rem;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background-color: #f0f0f0;
+    }
+    main {
+      display: flex;
+      flex: 1;
+      background-color: white;
+    }
+    section {
+      flex: 1;
+      padding: 2rem;
+    }
+    aside {
+      width: 260px;
+      background-color: white;
+      padding: 2rem;
+      border-left: 1px solid #ccc;
+      align-self: flex-start;
+      order: 2;
+    }
+    aside h3 {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #000;
+    }
+    aside ul {
+      list-style: none;
+      padding: 0;
+    }
+    aside ul li {
+      margin: 0.5rem 0;
+    }
+    aside ul li a {
+      text-decoration: none;
+      color: #0645AD;
+      font-weight: normal;
+    }
+    aside ul li a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+      font-size: 0.9rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    td {
+      vertical-align: top;
+      padding: 1rem;
+      border-top: 1px solid #ccc;
+    }
+    td:first-child {
+      width: 30%;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+    ul {
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="banner"></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Bio</a></li>
+        <li><a href="academic.html">Academic Background</a></li>
+        <li><a class="active" href="datascience.html">Data Science</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="drama.html">Drama</a></li>
+        <li><a href="instructional.html">Instructional Design</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2 style="color: black;">Data Science Experience</h2>
+      <p>
+        I have a diverse background in data science, spanning multiple industries including education, retail, and research. 
+        My expertise includes NLP, machine learning, time series forecasting, data visualization, and optimization. 
+        Below is a summary of my professional data science experience.
+      </p>
+      <table>
+        <tr>
+          <td>ETS Educational Testing Service (ETS) Canada, Inc.<br>October 2023 – Present</td>
+          <td>
+            <b>Senior IT Data Scientist</b>
+            <ul>
+              <li>Leveraged advanced LLMs (Mistral, GPT-4o, Claude, LLaMA) for automated scoring in Dify.</li>
+              <li>Conducted prompt engineering and optimized models for scoring accuracy.</li>
+              <li>Integrated LLM scoring into ETS platforms in collaboration with cross-functional teams.</li>
+              <li>Developed OpenCV-based facial recognition tools for test security.</li>
+              <li>Improved model performance with preprocessing and augmentation techniques.</li>
+              <li>Defined facial quality metrics and collaborated with QA teams for system integration.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>The Dufresne Group<br>November 2021 – May 2023</td>
+          <td>
+            <b>Data Scientist</b>
+            <ul>
+              <li>Led analytics to drive business growth and process improvement.</li>
+              <li>Cleaned, visualized, and modeled customer/product/project data using Python and R.</li>
+              <li>Presented insights to executives and automated reporting with Power BI.</li>
+              <li>Applied ML for pricing, promotions, and campaign performance using Facebook Robyn.</li>
+              <li>Forecasted operations using Prophet, ANN, RNN, LSTM; optimized transportation logistics.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>IBM Advance Studies Project, TMU<br>March 2020 – November 2021</td>
+          <td>
+            <b>Data Scientist</b>
+            <ul>
+              <li>Analyzed software bug/requirement data and built NLP pipelines with BERT, Word2Vec, Glove.</li>
+              <li>Implemented Transformer models for multi-label classification.</li>
+              <li>Produced reports and papers for IBM and academic venues (e.g., CASCON).</li>
+              <li>Received Best Paper Award at CASCON 2021.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>LG Science Park Project, TMU<br>Nov 2019 – Sept 2020</td>
+          <td>
+            <b>Data Scientist</b>
+            <ul>
+              <li>Built probabilistic time series models using DeepAR, DeepState, GluonTS.</li>
+              <li>Performed forecasting using LSTM, GRU, ARIMA, and Rainforest.</li>
+              <li>Wrote project reports and journal manuscripts.</li>
+              <li>Collaborated with clients and internal stakeholders on modeling strategy.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>The G. Raymond Chang School, TMU<br>Jan 2020 – Sept 2022</td>
+          <td>
+            <b>Instructor – Data Analytics Program</b>
+            <ul>
+              <li>Taught Python, data analytics, big data, and capstone courses (CIND 123, 119, 820, 830; CKME 136).</li>
+              <li>Designed and delivered practical, project-driven curriculum for adult learners.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>H.I.S. Merit Travel Group<br>Sept 2018 – Oct 2019</td>
+          <td>
+            <b>Business Intelligence and Data Analyst</b>
+            <ul>
+              <li>Developed dashboards using Tableau and automated reports using MS-SQL and iBank.</li>
+              <li>Conducted financial data aggregation and marketing analytics.</li>
+              <li>Migrated Crystal Reports to Tableau Server; validated data for enterprise DW integration.</li>
+              <li>Supported strategic planning through KPI dashboards and data storytelling.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <aside>
+      <h3>Academic</h3>
+      <ul>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="skills.html">Skills</a></li><li><a href="project-management.html">Project Management and Coordination</a></li>
+        <li><a href="publications.html">Publications & Presentations</a></li>
+        <li><a href="activities.html">Professional Activities and Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <h3>Portfolio</h3>
+      <ul>
+        <li><a href="portfolio-instructional.html">Instructional Design Portfolio</a></li><li><a href="portfolio-ds.html">DS Projects</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>Contact: <a href="mailto:deryakici@gmail.com">deryakici@gmail.com</a></p>
+  </footer>
+</body>
+</html>

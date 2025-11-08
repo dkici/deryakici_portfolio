@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DS Projects – Derya Kici</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header .banner {
+      background-image: url('customLogo.gif');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex; justify-content: center;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    nav ul li a {
+      display: block; padding: 1rem;
+      text-decoration: none; color: var(--text); font-weight: bold;
+    }
+    nav ul li a:hover, nav ul li a.active { background: #f9fafb; }
+    main {
+      display: grid; grid-template-columns: 1fr 280px; gap: 24px;
+      width: 100%; max-width: 1200px; margin: 0 auto; padding: 32px 20px 48px;
+      flex: 1;
+    }
+    @media (max-width: 980px) { main { grid-template-columns: 1fr; } aside { order: 2; } }
+    section h2 { margin: 0 0 8px 0; font-size: 2rem; }
+    .subtitle { margin: 0 0 22px 0; color: var(--muted); }
+    .project-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px;
+    }
+    .project-card {
+      border: 1px solid var(--border); border-radius: 16px; background: var(--card);
+      padding: 18px; transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .project-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+    .project-title { margin: 0 0 10px 0; font-size: 1.15rem; }
+    .project-body .row { display: grid; grid-template-columns: 160px 1fr; gap: 10px; margin: 6px 0; }
+    .project-body .label { font-weight: 600; color: #111; }
+    .project-body .value { color: #1f2937; }
+    aside h3 { margin-top: 1rem; font-size: 1rem; }
+    aside ul { list-style: none; padding: 0; }
+    aside ul li { margin: .5rem 0; }
+    aside ul li a { text-decoration: none; color: #0645AD; }
+    aside ul li a:hover { text-decoration: underline; }
+    footer { text-align: center; padding: 1rem; background: #eee; font-size: .9rem; }
+  </style>
+</head>
+<body>
+<header>
+<div class="banner"></div>
+<nav>
+<ul>
+<li><a href="index.html">Bio</a></li>
+<li><a href="academic.html">Academic Background</a></li>
+<li><a href="datascience.html">Data Science</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="teaching.html">Teaching</a></li>
+<li><a href="drama.html">Drama</a></li>
+<li><a href="instructional.html">Instructional Design</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section>
+<h2>Data Science Projects</h2>
+
+<div class="project-grid">
+<div class="project-card">
+<h3 class="project-title">Software Requirement Specifications (SRS) Classification</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Automate classification of SRS documents (type, priority, severity) to reduce manual effort and improve consistency in the SDLC.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Compare traditional deep learning (LSTM/BiLSTM with GloVe/ELMo) against transfer learning with DistilBERT; fine‑tune on labeled SRS datasets with stratified train/val/test splits.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">DistilBERT transformer fine‑tuning; LSTM/BiLSTM baselines; AdamW optimizer; sequence truncation/padding; weighted F1 for imbalanced classes.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Large industrial SRS corpus (~83k requirements) and PROMISE‑NFR benchmark (626 requirements).</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">DistilBERT achieved ~80% F1 for Type and ~71% for Severity, outperforming LSTM/BiLSTM; improved consistency and reduced manual classification overhead.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Probabilistic Forecasting for Predicting City‑wide Electricity Consumption</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Develop accurate probabilistic forecasts of city‑level electricity demand with calibrated uncertainty for planning and policy decisions.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Use global forecasting models across multiple cities’ hourly series; compare statistical, ML, RNN, and probabilistic deep learning methods; evaluate both point accuracy and interval calibration.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Baselines: Naive, SARIMAX; ML: Random Forest, Gradient Boosting; Deep Learning: LSTM, GRU; Probabilistic: DeepAR, DeepState; metrics: NRMSE/SMAPE for point, weighted pinball loss for quantiles.</span></div><div class="row"><span class="label">Data:</span> <span class="value">81 cities’ hourly electricity consumption (~34k observations each) with calendar/time covariates (hour, weekday, month, seasonal encodings).</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">GRU/LSTM led on point accuracy; DeepAR/DeepState produced better‑calibrated intervals at longer horizons; demonstrated value of uncertainty‑aware global models for demand planning.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Store Performance Analysis</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Identify key drivers of sales and traffic across ~89 locations over multiple years.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Conduct correlation and feature‑importance analysis on operational/demographic metrics; compare year‑over‑year trends and KPIs.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Correlation matrices and pairwise plots; tree‑based feature importance; descriptive analytics and BI dashboards.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Sales, traffic, store size, financing %, compliance, city population (2019–2022).</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Traffic was the strongest predictor (~80% correlation); store size moderate (~50%); higher financing % negatively associated with sales; actionable guidance for traffic growth and footprint optimization.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Competitors’ Location Analysis</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Quantify how competitor proximity and co‑tenancy influence store traffic and sales.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Compare co‑tenant vs. same‑site vs. nearby competitors; analyze distance‑based relationships and regional variation.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Correlation analysis; geospatial proximity features; per‑capita normalization of traffic and sales.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Store traffic/sales metrics with competitor presence categorized by proximity (co‑tenant, same‑site, nearby, distant).</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Co‑tenancy with major competitors showed positive impacts; certain nearby competitors boosted sales; greater distance from others correlated with stronger performance—informing site‑selection strategy.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Pricing &amp; Promotion Modeling</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Predict promotion/pricing impact on sales and traffic to guide campaign design and budget allocation.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Train and compare multiple regression and ensemble models; assess feature importance and generalization via cross‑validation.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Linear/Ridge/Lasso regression, KNN, Decision Tree, Random Forest, Gradient Boosting; hyperparameter tuning; error analysis.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Historical sales and promotion features with product/category, calendar/events, and price signals.</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Identified highest‑impact promotions and pricing levers; ensemble models provided the best accuracy and robust insights for planning.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Truck Optimization Simulation (Romeoville Case)</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Optimize truck routing and resource allocation for deliveries in the Romeoville region, reducing cost and improving efficiency.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Two‑stage workflow: (1) cluster delivery points into service zones; (2) solve transportation optimization with mathematical programming; evaluate solver setups and scenarios.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Clustering (K‑means style); linear programming transportation models minimizing distance/cost; solvers: IBM CPLEX and PuLP‑CPLEX; scenario‑based simulation for cost and load balance.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Romeoville delivery location datasets including a Dec 20, 2020 case; variables: trucks, delivery points, demand, distance matrices.</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Clustering simplified the problem and improved solver performance; optimal plans minimized cost and balanced loads; scenario analysis showed measurable savings and utilization gains.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Face Recognition and Cheating Detection Project</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Detect impersonation/cheating by verifying whether submitted faces match registered identities.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Compare in‑house face embeddings with commercial APIs; evaluate fairness across demographics and acquisition conditions.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Deep learning embeddings; similarity metrics (cosine/Euclidean); logistic/RF/GB on similarity scores; threshold (τ) selection; fairness metrics (Equalized Odds, FPR/FNR gaps, DI ratio).</span></div><div class="row"><span class="label">Data:</span> <span class="value">Image/video face pairs with identity labels under varying lighting/pose/quality conditions.</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">In‑house model competitive with commercial APIs; identified bias patterns; delivered a deployable, fairness‑aware verification framework for assessments/security.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Automated Test Scoring (LLM‑based)</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Build accurate, rubric‑aligned automated scoring for open‑ended responses using modern Large Language Models.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Operationalize LLM‑based scoring in Dify with iterative prompt engineering, rubric conditioning, and systematic evaluation; integrate into existing assessment platforms.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">LLMs: GPT‑4o, Claude, Mistral, LLaMA; techniques: few‑shot chain‑of‑thought prompts, rubric decomposition, response normalization, routing/caching for latency/cost; feature selection via Genetic Algorithm for rubric‑aligned optimization.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Rubric‑scored examples and calibration sets for prompt development, A/B testing, and drift monitoring; anonymized responses.</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">High agreement with human raters and reduced turnaround time; improved scoring consistency; rapid rubric updates and smooth platform integration.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Food Inspections and Violations</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Predict establishments at higher risk of violations to prioritize inspections and improve public‑health outcomes.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Perform EDA and cleaning; expand pipe‑separated violation codes; engineer time fields; address class imbalance; train and compare classifiers; evaluate with precision/recall/F1.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">One‑hot encoding for violations, facility and inspection types; feature selection via RandomForest importance; resampling (RandomUnder/OverSampler, NearMiss, SMOTE); models: GaussianNB, Decision Tree, baseline neural network; threshold tuning and classification reports.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Chicago Food Inspections &amp; Violations dataset (&gt;100k records after cleaning); target risk levels (High/Medium/Low).</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Resampling boosted recall for high‑risk cases; violation indicators and inspection‑type features were strong predictors; enabled more efficient inspection allocation.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Marketing Ad Spend Analysis</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Quantify channel effectiveness and ROI across categories and funnel stages, and optimize budget allocation.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Combine classification of conversion impact with regression of sales vs. weekly spend; segment by category and funnel position; compare models via cross‑validation.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Classification: Logistic Regression, KNN, Decision Tree, Random Forest, SVM. Regression: Linear, Ridge, Lasso, KNN, Decision Tree, Random Forest, Gradient Boosting; tree‑based feature importance to interpret drivers.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Weekly spend and sales data, segmented by product category and funnel position; features include spend levels, funnel stage, conversions.</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Tree‑based models (RF/GBR) outperformed linear baselines; segmentation by funnel and category significantly affected effectiveness; recommendations shifted budget to high‑ROI channels.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">Predicting GO Rail Ridership</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Forecast short‑ to mid‑term ridership to inform schedule, capacity, and resource planning.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">End‑to‑end preprocessing from raw Excel to clean series at corridor/station/time‑period; benchmark statistical vs. ML vs. Prophet models; rolling origin evaluation and Prophet CV.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Diagnostics (ADF, seasonal decomposition, ACF/PACF); ARIMA/ETS baselines; Gradient Boosting with exogenous regressors; Prophet with extra regressors (e.g., total trips, calendar effects); metrics: RMSE/MAE/R² and Prophet CV metrics.</span></div><div class="row"><span class="label">Data:</span> <span class="value">Metrolinx ridership and service data aggregated to daily frequency with calendar features and exogenous regressors; corridor/station/time‑period granularities.</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Prophet+regressors provided well‑calibrated forecasts and tight intervals; ML was competitive on point error; reusable pipeline supports rapid planning scenarios.</span></div>
+</div>
+</div>
+<div class="project-card">
+<h3 class="project-title">CIHI P‑Card Analytics: Clustering &amp; Anomaly Detection</h3>
+<div class="project-body">
+<div class="row"><span class="label">Objective:</span> <span class="value">Analyze corporate purchasing‑card (P‑Card) transactions to surface spending patterns by service area, detect misclassification, and flag anomalous activity.</span></div><div class="row"><span class="label">Approach:</span> <span class="value">Load and clean multi‑year files; standardize vendor/category fields; build summary views by service area; explore spending behavior; apply unsupervised methods for clustering and anomalies.</span></div><div class="row"><span class="label">Methods / Models:</span> <span class="value">Feature scaling (StandardScaler); K‑Means clustering for spend segmentation; IsolationForest for anomaly detection; rule/keyword checks for misclassification; interactive visualizations (Plotly, seaborn).</span></div><div class="row"><span class="label">Data:</span> <span class="value">P‑Card transactions (2014–2018) with amounts, merchant/category details, and service areas; consolidated into a harmonized schema.</span></div><div class="row"><span class="label">Results / Impact:</span> <span class="value">Flagged outliers and probable misclassifications; segmented spend profiles; recommended vendor/category normalization and automated anomaly screening to strengthen oversight.</span></div>
+</div>
+</div>
+</div>
+</section>
+<aside>
+<h3>Academic</h3>
+<ul>
+<li><a href="courses.html">Courses</a></li>
+<li><a href="awards.html">Awards</a></li>
+<li><a href="skills.html">Skills</a></li><li><a href="project-management.html">Project Management and Coordination</a></li>
+<li><a href="publications.html">Publications &amp; Presentations</a></li>
+<li><a href="activities.html">Professional Activities and Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<h3>Portfolio</h3>
+<ul>
+<li><a href="portfolio-instructional.html">Instructional Design Portfolio</a></li><li><a class="active" href="portfolio-ds.html">DS Projects</a></li>
+</ul>
+</aside>
+</main>
+<footer>
+<p>Contact: <a href="mailto:deryakici@gmail.com">deryakici@gmail.com</a></p>
+</footer>
+</body>
+</html>
